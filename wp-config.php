@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable PSR1.Files.SideEffects -- WordPress config bootstraps WordPress by design.
+
 /** Enable W3 Total Cache */
 
 define('WP_CACHE', true); // Added by W3 Total Cache
@@ -66,7 +68,8 @@ define('NONCE_SALT', 'put your unique phrase here');
 * You can have multiple installations in one database if you give each a unique
 * prefix. Only numbers, letters, and underscores please!
 */
-/** @psalm-suppress UnusedVariable */
+/** @psalm-suppress InvalidGlobal */
+global $table_prefix;
 $table_prefix  = 'wplgp_';
 /**
 * WordPress Localized Language, defaults to English.
